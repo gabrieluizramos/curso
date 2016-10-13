@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Curso Livre » Desenvolvimento Web » Aplicação Final</title>
+	<style>
+		/* RESET */
+		*{
+			margin:0;
+			padding:0;
+			border:0;
+			outline:none;
+			box-sizing:border-box;
+			list-style:none;
+			text-decoration:none;
+			font-family:Arial;
+		}
+		body{
+			background:#363636;
+		}
+		body , html{
+			min-height: 100vh;
+			height: 100vh;
+		}
+		.wrapper{
+			width: 95%;
+			max-width:500px;
+			margin:0 auto;
+			min-height:100vh;
+		}
+		.form{
+			padding:15px 5px;
+		}
+		.form:after , .linha:after{
+			content:'';
+			display:block;
+			width:100%;
+			height:0;
+			clear:both;
+		}
+		.linha{
+			width: 100%;
+			display:block;
+			margin:15px 0;
+			clear:both;
+		}
+		.fieldset{
+			display:block;
+		}
+		.fd-50{
+			width:49%;
+		}
+		.fd-50:first-child{
+			float:left;
+		}
+		.fd-50:last-child{
+			float:right;
+		}
+		.fd-100{
+			width: 100%;
+		}
+		.input{
+			width: 100%;
+			border:1px solid #ff611d;
+			padding:10px;
+			background:#363636;
+			color:#ff611d;
+			font-size:20px;
+		}
+		.label{
+			color:#ff611d;
+			display:block;
+			font-weight:bold;
+		}
+		.radio-group{
+			padding:15px 5px;
+		}
+		.radio-label{
+			margin-right:5px;
+			color:#ff611d;
+		}
+		.hidden{
+			display:none;
+		}
+		.box-radio{
+			width: 15px;
+			height:15px;
+			border:1px solid #ff611d;
+			border-radius:100%;
+			display:inline-block;
+			margin-right:5px;
+			position:relative;
+			padding:2px;
+		}
+		.box-radio:after{
+			content:'';
+			background:transparent;
+			display:block;
+			width:100%;
+			height:100%;
+			opacity:0;
+			border-radius:50%;
+			transition:.2s ease-in-out;
+		}
+		.box-radio[data-active="true"]:after{
+			background:#ff611d;
+			opacity:1;			
+		}
+		.btn{
+			background:#ff611d;
+			color:#FFF;
+			display:block;
+			padding:15px;
+			font-size:20px;
+			font-weight:bold;
+			width: 100%;
+			cursor:pointer;
+			text-transform:uppercase;
+		}
+		.btn:active{
+			box-shadow:inset 3px 2px 5px #a73200;
+		}
+		.table{
+			width: 100%;
+			margin: 50px auto;
+		}
+		.th{
+			background:#ff611d;
+			font-weight:bold;
+		}
+		.th , .td{
+			border:1px solid #ff611d;
+			border-collapse:collapse;
+			color:#FFF;
+			padding:15px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body class="body">
+	<div class="wrapper">
+		<form class="form" name="formAlunos">
+			<div class="linha">
+				<fieldset class="fieldset fd-100">
+					<label for="nome" class="label">Nome</label>
+					<input type="text" class="input" id="nome" name="nome">
+				</fieldset>
+			</div>
+			<div class="linha">
+				<fieldset class="fd-50">
+					<label for="idade" class="label">Idade</label>
+					<input type="text" class="input" id="idade" name="idade">
+				</fieldset>
+				<fieldset class="fd-50">
+					<label for="sexo" class="label">Sexo</label>
+					<div class="radio-group">
+						<div class="box-radio" data-box data-value="m"></div><label for="m"  data-value="m" class="radio-label" data-radio>M</label>
+						<div class="box-radio" data-box data-value="f"></div><label for="f" data-value="f" class="radio-label" data-radio>F</label>
+					</div>
+				</fieldset>
+			</div>
+			<div class="linha">
+				<fieldset class="fieldset fd-100">
+					<label for="ra" class="label">R.A.</label>
+					<input type="text" class="input" id="ra" name="ra">
+				</fieldset>
+			</div>
+			<div class="linha">
+				<fieldset class="fieldset fd-50">
+					<label for="curso" class="label">Curso</label>
+					<select id="curso" class="input" name="curso">
+						<option selected disabled id="curso">Selecione</option>
+						<option value="ADS">ADS</option>
+						<option value="SI">SI</option>
+						<option value="GE">GE</option>
+						<option value="GP">GP</option>
+						<option value="LOG">LOG</option>
+					</select>
+				</fieldset>
+				<fieldset class="fieldset fd-50">
+					<label for="ciclo" class="label">Ciclo</label>
+					<select id="ciclo" class="input" name="ciclo">
+						<option selected disabled>Selecione</option>
+						<option value="1">1º</option>
+						<option value="2">2º</option>
+						<option value="3">3º</option>
+						<option value="4">4º</option>
+						<option value="5">5º</option>
+						<option value="6">6º</option>
+					</select>
+				</fieldset>
+			</div>
+			<div class="linha">
+				<fieldset class="fieldset fd-100">
+					<button class="btn" data-button>cadastrar aluno</button>
+				</fieldset>
+			</div>
+		</form>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="th">RA</th>
+					<th class="th">Nome</th>
+					<th class="th">Excluir</th>
+				</tr>
+			</thead>
+			<tbody data-table>
+				
+			</tbody>
+		</table>
+		<button class="btn" data-delete>deletar alunos</button>
+	</div>
+	<script>
+		// checa "radios" (divs) no click 
+		var radiosClicker = document.querySelectorAll( '[data-radio] , [data-box]' );
+		for (var i = 0; i < radiosClicker.length ; i++) {
+			radiosClicker[ i ].addEventListener( 'click' , function(){
+				var boxes = document.querySelectorAll( '[data-box]' );
+				var sexo = this.getAttribute( 'data-value' );
+				for( var j = 0 ; j < boxes.length ; j++ ){
+					boxes[j].dataset.active = false;
+				}
+				document.querySelector( '[data-box][data-value="'+ sexo +'"]' ).dataset.active = true; 
+			});
+		}
+
+		// click do botao
+		document.querySelector( '[data-button]' ).addEventListener( 'click' , function( e ){
+			e.preventDefault();
+			salvaAluno();
+		});
+
+		document.querySelector( '[data-delete]' ).addEventListener( 'click' , function( e ){
+			e.preventDefault();
+			deletarAlunos();
+		});
+
+		function bindSingles(){
+			var excluir = document.querySelectorAll( '[data-single]' );
+			var qtd = excluir.length;
+
+			for ( var i = 0 ; i < qtd ; i++ ){
+				excluir[i].addEventListener( 'click' , function( e ){
+					e.preventDefault();
+					var ra = this.getAttribute( 'data-single' );
+					deletarUnicoAluno( ra );
+				});
+			}
+		}
+
+		function salvaAluno(){
+			var nome = formAlunos.nome.value;
+			var idade = formAlunos.idade.value;
+			var ra = formAlunos.ra.value;
+			var curso = formAlunos.curso.value;
+			var ciclo = formAlunos.ciclo.value;
+			var sexo = document.querySelector( '[data-box][data-active="true"]' ).getAttribute( 'data-value' );
+
+			var novoAluno = {
+				nome : nome ,
+				idade : idade ,
+				ra : ra ,
+				curso : curso ,
+				ciclo : ciclo , 
+				sexo : sexo
+			}
+
+			novoAluno = JSON.stringify( novoAluno );
+			sessionStorage.setItem( ra , novoAluno  );
+
+			carregaAlunos();
+		}
+
+		function deletarAlunos(){
+			sessionStorage.clear();
+
+			carregaAlunos();
+		}
+
+		function carregaAlunos(){
+
+			var lista = document.querySelector( '[data-table]' );
+
+			if ( sessionStorage.length ){
+				var totalAlunos = sessionStorage;
+				var listaAlunos = "";
+
+				for ( var aluno in totalAlunos ){
+					var dadosAlunos = JSON.parse( totalAlunos[aluno] );
+					listaAlunos += '<tr>' + 
+					'<td class="td">' + dadosAlunos.ra + '</td>'+
+					'<td class="td">' + dadosAlunos.nome +'</td>'+
+					'<td class="td"><button class="btn" data-single="' + dadosAlunos.ra + '">X</button></td>' +
+					'</tr>';
+				}
+
+				lista.innerHTML = listaAlunos;
+			}
+			else{
+				lista.innerHTML = "";
+
+			}
+			if ( document.querySelectorAll( '[data-single]' ).length ){
+				bindSingles();
+			}
+		}
+
+		function deletarUnicoAluno( ra ){
+			sessionStorage.removeItem( ra );
+
+			carregaAlunos();
+		}
+
+		carregaAlunos();
+	</script>
+</body>
+</html>
