@@ -3,84 +3,112 @@
 <head>
 	<!-- META -->
 	<meta charset="UTF-8">
+	<!-- VIEWPORT PARA RESPONSIVIDADE -->
 	<meta name="viewport" content="width=device-width" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Curso Livre » Desenvolvimento Web » Aplicação Final</title>
+	<!-- CSS -->
 	<link rel="stylesheet" href="css/style.css">
+	<title>Cadastro de Alunos</title>
 </head>
-<body class="body">
-	<div class="wrapper">
-		<form class="form" name="formAlunos">
-			<div class="linha">
-				<fieldset class="fieldset fd-100">
-					<label for="nome" class="label">Nome</label>
-					<input type="text" class="input" id="nome" name="nome">
-				</fieldset>
-			</div>
-			<div class="linha">
-				<fieldset class="fd-50">
-					<label for="idade" class="label">Idade</label>
-					<input type="text" class="input" id="idade" name="idade">
-				</fieldset>
-				<fieldset class="fd-50">
-					<label for="sexo" class="label">Sexo</label>
-					<div class="radio-group">
-						<div class="box-radio" data-box data-value="m"></div><label for="m"  data-value="m" class="radio-label" data-radio>M</label>
-						<div class="box-radio" data-box data-value="f"></div><label for="f" data-value="f" class="radio-label" data-radio>F</label>
-					</div>
-				</fieldset>
-			</div>
-			<div class="linha">
-				<fieldset class="fieldset fd-100">
-					<label for="ra" class="label">R.A.</label>
-					<input type="text" class="input" id="ra" name="ra">
-				</fieldset>
-			</div>
-			<div class="linha">
-				<fieldset class="fieldset fd-50">
-					<label for="curso" class="label">Curso</label>
-					<select id="curso" class="input" name="curso">
-						<option selected disabled id="curso">Selecione</option>
-						<option value="ADS">ADS</option>
-						<option value="SI">SI</option>
-						<option value="GE">GE</option>
-						<option value="GP">GP</option>
-						<option value="LOG">LOG</option>
-					</select>
-				</fieldset>
-				<fieldset class="fieldset fd-50">
-					<label for="ciclo" class="label">Ciclo</label>
-					<select id="ciclo" class="input" name="ciclo">
-						<option selected disabled>Selecione</option>
-						<option value="1">1º</option>
-						<option value="2">2º</option>
-						<option value="3">3º</option>
-						<option value="4">4º</option>
-						<option value="5">5º</option>
-						<option value="6">6º</option>
-					</select>
-				</fieldset>
-			</div>
-			<div class="linha">
-				<fieldset class="fieldset fd-100">
-					<button class="btn" data-button>cadastrar aluno</button>
-				</fieldset>
-			</div>
-		</form>
-		<table class="table">
-			<thead>
-				<tr>
-					<th class="th">RA</th>
-					<th class="th">Nome</th>
-					<th class="th">Excluir</th>
-				</tr>
-			</thead>
-			<tbody data-table>
-				
-			</tbody>
-		</table>
-		<button class="btn" data-delete>deletar alunos</button>
-	</div>
-	<script src="js/main.js"></script>
+<body>
+	<!-- HEADER -->
+	<header class="header">
+		<!-- TAG HEADER PARA MARCAR SEMANTICAMENTE O CABECALHO DA PAGINA -->
+		<div class="wrapper flex">
+			<figure class="figure logo">
+				<img src="img/logo.png" alt="Logo" class="img">
+			</figure>
+			<!-- MENU -->
+			<nav class="nav-container flex">
+				<!-- TAG NAV PARA MARCAR SEMANTICAMENTE O MENU DE NAVEGACAO + LISTA UL E LI PARA OS ITEMS DO MENU + LINK -->
+				<ul class="nav-list flex">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Cadastro de alunos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="listagem.html">Listagem de alunos</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- / MENU -->
+		</div>
+	</header>
+	<!-- / HEADER -->
+
+	<main class="main">
+		<!-- CADASTRO -->
+		<div class="wrapper">
+			<form class="form" name="formCadastro">
+				<!-- TAG FORM COM AS ENTRADAS DE DADO -->
+				<div class="linha clearfix">
+					<fieldset class="fieldset fd-100">
+						<!-- TAG FIELDSET PARA MARCAR SEMANTICAMENTE UM AGRUPAMENTO DE ITENS DE FORMULARIO -->
+						<label class="label" for="ra">RA</label>
+						<!-- TAG LABEL PARA ROTULAR UM TITULO A UM CAMPO -->
+						<!-- ATRIBUTO FOR DENTRO DO LABEL FAZ REFERENCIA AO ATRIBUTO ID DO INPUT -->
+						<input class="input" type="text" id="ra" name="ra">
+					</fieldset>
+				</div>
+				<div class="linha clearfix">
+					<fieldset class="fieldset fd-100">
+						<label class="label" for="nome">Nome</label>
+						<input class="input" type="text" id="nome" name="nome">
+					</fieldset>
+				</div>
+				<div class="linha clearfix">
+					<fieldset class="fieldset fd-50">
+						<label class="label" for="curso">Curso</label>
+						<!-- SELECT PARA MULTIPLAS OPCOES -->
+						<select class="input" id="curso" name="curso">
+							<option> ADS </option>
+							<option> SI </option>
+							<option> GE </option>
+							<option> GP </option>
+							<option> LOG </option>
+						</select>
+					</fieldset>
+					<fieldset class="fieldset fd-50">
+						<label class="label" for="ciclo">Ciclo</label>
+						<select class="input" id="ciclo" name="ciclo">
+							<option> 1 </option>
+							<option> 2 </option>
+							<option> 3 </option>
+							<option> 4 </option>
+							<option> 5 </option>
+						</select>
+					</fieldset>
+				</div>
+				<div class="linha clearfix">
+					<fieldset class="fieldset fd-100">
+						<label class="label" for="obs">Obs:</label>
+						<textarea class="input" id="obs" name="obs"></textarea>
+					</fieldset>
+				</div>
+				<div class="linha clearfix">
+					<fieldset>
+						<button class="button">Cadastrar</button>
+					</fieldset>
+				</div>
+				<!-- INPUT TYPE SUBMIT USADO ANTIGAMENTE, NA EPOCA DO XHTML -->
+				<!-- <input" type="submit" value="Cadastrar"> -->
+				<!-- 
+					ALGUNS OUTROS INPUTS
+					type="checkbox"
+					type="radio"
+				-->
+				<!-- BUTTON, NO LUGAR DO INPUT TYPE SUBMIT, PARA DISPARAR O CONTEUDO DO FORMULARIO -->
+			</form>
+		</div>
+		<!-- / CADASTRO -->
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer flex">
+		<!-- TAG FOOTER PARA MARCAR SEMANTICAMENTE O CONTEUDO DO RODAPE -->
+		2016 - Desenvolvido no curso de desenvolvimento web
+	</footer>
+	<!-- / FOOTER -->
+	
+	<!-- PAGE-SCRIPT -->
+	<script src="js/cadastro.js"></script>
 </body>
 </html>

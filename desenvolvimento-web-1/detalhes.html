@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="UTF-8">
+	<!-- VIEWPORT PARA RESPONSIVIDADE -->
+	<meta name="viewport" content="width=device-width" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<title>Listagem de conteudo</title>
+</head>
+<!-- HEADER -->
+<header class="header">
+	<!-- TAG HEADER PARA MARCAR SEMANTICAMENTE O CABECALHO DA PAGINA -->
+	<div class="wrapper flex">
+		<figure class="figure logo">
+			<img src="img/logo.png" alt="Logo" class="img">
+		</figure>
+		<!-- MENU -->
+		<nav class="nav-container flex">
+			<!-- TAG NAV PARA MARCAR SEMANTICAMENTE O MENU DE NAVEGACAO + LISTA UL E LI PARA OS ITEMS DO MENU + LINK -->
+			<ul class="nav-list flex">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Cadastro de alunos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="listagem.html">Listagem de alunos</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- / MENU -->
+	</div>
+</header>
+<!-- / HEADER -->
+
+
+<!-- CONTEUDO -->
+<main class="main listagem">
+	<div class="wrapper flex">
+		<h2 class="aluno-dado h2-nome" data-nome>Dericky</h2>
+		<h3 class="aluno-dado h3-ra" data-ra>000501683</h3>
+		<p class="aluno-dado p-obs">Obs</p>
+	</div>
+</main>
+<!-- / CONTEUDO -->
+
+<!-- FOOTER -->
+<footer class="footer flex">
+	<!-- TAG FOOTER PARA MARCAR SEMANTICAMENTE O CONTEUDO DO RODAPE -->
+	2016 - Desenvolvido no curso de desenvolvimento web
+</footer>
+<!-- / FOOTER -->
+
+<!-- PAGE-SCRIPT -->
+<script src="js/detalhes.js"></script>
+</body>
+</html>

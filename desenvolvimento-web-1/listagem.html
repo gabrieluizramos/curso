@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="UTF-8">
+	<!-- VIEWPORT PARA RESPONSIVIDADE -->
+	<meta name="viewport" content="width=device-width" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<title>Listagem de conteudo</title>
+</head>
+<body>
+	<!-- HEADER -->
+	<header class="header">
+		<!-- TAG HEADER PARA MARCAR SEMANTICAMENTE O CABECALHO DA PAGINA -->
+		<div class="wrapper flex">
+			<figure class="figure logo">
+				<img src="img/logo.png" alt="Logo" class="img">
+			</figure>
+			<!-- MENU -->
+			<nav class="nav-container flex">
+				<!-- TAG NAV PARA MARCAR SEMANTICAMENTE O MENU DE NAVEGACAO + LISTA UL E LI PARA OS ITEMS DO MENU + LINK -->
+				<ul class="nav-list flex">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Cadastro de alunos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="listagem.html">Listagem de alunos</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- / MENU -->
+		</div>
+	</header>
+	<!-- / HEADER -->
+
+	<!-- CONTEUDO -->
+	<main class="main">
+		<!-- TAG MAIN PARA MARCAR SEMANTICAMENTE UMA SECAO PRINCIPAL DO SITE -->
+		<div class="wrapper flex">
+			<table class="table">
+				<!-- TAG TABLE PODE SER DIVIDIDA EM THEAD E TBODY, COM CABECALHO E CORPO DA TABELA -->
+				<!-- NO CABECALHO FICAM OS TITULOS E NO CORPO O CONTEUDO DA TABELA -->
+				<!-- THEAD = CABECALHO -->
+				<!-- TBODY = CORPO -->
+				<!-- TR = LINHA -->
+				<!-- TH = CELULA DENTRO DA LINHA DENTRO DO THEAD -->
+				<!-- TD = CELULA DENTRO DA LINHA DENTRO DO CORPO E DAS DEMAIS LINHAS DA TABELA -->
+				<thead>
+					<tr>
+						<th>RA</th>
+						<th>Nome</th>
+						<th>Ver Mais</th>
+						<th>Excluir</th>
+					</tr>
+				</thead>
+				<tbody data-tabela>
+				</tbody>
+			</table>
+		</div>
+		<div class="wrapper flex mr-tp-200 flex-end">
+			<a data-clear class="button wd-500">excluir todos</a>
+		</div>
+	</main>
+	<!-- / CONTEUDO -->
+
+	<!-- FOOTER -->
+	<footer class="footer flex">
+		<!-- TAG FOOTER PARA MARCAR SEMANTICAMENTE O CONTEUDO DO RODAPE -->
+		2016 - Desenvolvido no curso de desenvolvimento web
+	</footer>
+	<!-- / FOOTER -->
+
+	<!-- PAGE-SCRIPT -->
+	<script src="js/listagem.js"></script>
+</body>
+</html>
